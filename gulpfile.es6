@@ -19,6 +19,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 let browserSync = require('browser-sync');
 let reload = browserSync.reload;
+let deploy = require('gulp-gh-pages');;
 
 let production = process.env.NODE_ENV == 'production';
 
@@ -107,7 +108,15 @@ gulp.task('serve', ['watch'], function() {
       baseDir: 'dist'
     }
   });
-})
+});
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
 
 
 gulp.task('default', ['watchify', 'sass', 'index', 'serve']);
