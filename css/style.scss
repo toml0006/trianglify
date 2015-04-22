@@ -259,11 +259,13 @@ section .content {
 }
 
 .component-colorbrewerdemo {
-  columns: 3;
   margin: 3rem 0;
-
+  text-align: center;
+  @extend .clearfix;
+  overflow: auto;
   .item {
-    @extend .clearfix;
+    float: left;
+    width: 33%;
     margin-bottom: 2rem;
 
     canvas {border-radius: 50%;}
