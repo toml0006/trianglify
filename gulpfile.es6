@@ -76,7 +76,7 @@ gulp.task('clean', (done)=> fs.unlink('dist', done));
 
 
 gulp.task('index', function() {
-  gulp.src('html/index.html')
+  gulp.src(['html/index.html', 'favicon.png'])
     .pipe(gulp.dest('dist'))
     .pipe(reload({stream: true}));
 });
