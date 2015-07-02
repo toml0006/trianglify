@@ -107,6 +107,8 @@ p {
   position: relative;
   width: 100%;
   overflow: hidden;
+  background: #99C8DF url(images/hero.png) center center;
+  background-size: cover;
 
   //fix for bad font smoothing in chrome
   -webkit-font-smoothing: antialiased;
@@ -132,7 +134,7 @@ p {
     max-width: 100%;
   }
 
-  canvas {
+  canvas, img.hero-placeholder {
     position: absolute;
     left: 50%;
     top: 50%;
