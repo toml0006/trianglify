@@ -2,7 +2,21 @@
   "name": "trianglify",
   "version": "0.3.1",
   "description": "Trianglify is a javascript library for generating colorful triangle meshes that can be used as SVG images and CSS backgrounds.",
+  "author": "Quinn Rohlf <qr@qrohlf.com>",
+  "license": "GPL-3.0",
   "main": "lib/trianglify.js",
+  "homepage": "https://github.com/qrohlf/trianglify",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qrohlf/trianglify.git"
+  },
+  "scripts": {
+    "test": "mocha test/test.js",
+    "lint": "node node_modules/standard/bin/cmd.js",
+    "start": "node gulpfile.js",
+    "postinstall": "node scripts/postinstall.js",
+    "precommit": "npm run lint && npm run test"
+  },
   "dependencies": {
     "chroma-js": "^0.6.3",
     "colors": "^1.1.2",
@@ -13,34 +27,8 @@
   "optionalDependencies": {
     "canvas": "1.2.3"
   },
-  "directories": {
-    "example": "examples"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/qrohlf/trianglify.git"
-  },
-  "keywords": [
-    "svg",
-    "d3.js",
-    "visualization"
-  ],
-  "author": "Quinn Rohlf <qr@qrohlf.com>",
-  "license": "GPLv3",
-  "bugs": {
-    "url": "https://github.com/qrohlf/trianglify/issues"
-  },
-  "homepage": "https://github.com/qrohlf/trianglify",
-  "scripts": {
-    "test": "mocha test/test.js",
-    "start": "node gulpfile.js",
-    "postinstall": "node scripts/postinstall.js"
-  },
-  "browser": {
-    "jsdom": false,
-    "canvas": false
-  },
   "devDependencies": {
+    "babel-eslint": "^4.0.0",
     "browserify": "^9.0.3",
     "chai": "^2.1.0",
     "del": "^0.1.1",
@@ -54,11 +42,34 @@
     "gulp-sourcemaps": "^1.5.0",
     "gulp-tag-version": "^1.1.0",
     "gulp-uglify": "^0.3.1",
+    "husky": "^0.9.1",
     "jshint-stylish": "^0.4.0",
     "mocha": "^2.1.0",
     "node-notifier": "^4.1.2",
+    "standard": "^4.5.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist"
+    ]
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "keywords": [
+    "svg",
+    "d3.js",
+    "visualization"
+  ],
+  "bugs": {
+    "url": "https://github.com/qrohlf/trianglify/issues"
+  },
+  "browser": {
+    "jsdom": false,
+    "canvas": false
   },
   "npmName": "trianglify",
   "npmFileMap": [
