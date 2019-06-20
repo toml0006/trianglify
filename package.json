@@ -9,9 +9,6 @@
 		"delaunator": "^1.0.4",
 		"seedrandom": "^2.3.11"
 	},
-	"optionalDependencies": {
-		"canvas": "^1.3.0"
-	},
 	"directories": {
 		"example": "examples"
 	},
@@ -34,10 +31,6 @@
 		"test": "mocha test/test.js",
 		"start": "gulp",
 		"postinstall": "node scripts/postinstall.js"
-	},
-	"browser": {
-		"jsdom": false,
-		"canvas": false
 	},
 	"devDependencies": {
 		"browserify": "^9.0.3",
